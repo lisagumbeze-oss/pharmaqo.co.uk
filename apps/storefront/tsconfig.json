@@ -1,0 +1,34 @@
+{
+  "extends": "@pharmaqo/config/tsconfig/nextjs",
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@pharmaqo/config": [
+        "../../packages/config/src"
+      ],
+      "@pharmaqo/config/*": [
+        "../../packages/config/src/*"
+      ],
+      "@pharmaqo/ui": [
+        "../../packages/ui/src"
+      ],
+      "@pharmaqo/ui/*": [
+        "../../packages/ui/src/*"
+      ],
+      "@pharmaqo/calculators": [
+        "../../packages/calculators/src"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "pharmaqo",
+  "private": true,
+  "scripts": {
+    "dev:storefront": "pnpm --filter storefront dev",
+    "dev:backend": "pnpm --filter backend dev",
+    "dev:cms": "pnpm --filter cms dev",
+    "build:storefront": "pnpm --filter storefront build",
+    "build:backend": "pnpm --filter backend build",
+    "build:cms": "pnpm --filter cms build",
+    "build": "pnpm -r build",
+    "seed": "pnpm --filter backend seed",
+    "test": "pnpm --filter @pharmaqo/calculators test",
+    "test:coverage": "pnpm --filter @pharmaqo/calculators test:coverage",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,md,css,yml,yaml}\"",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.0",
+    "lint-staged": "^15.4.0",
+    "prettier": "^3.4.0",
+    "@eslint/js": "^9.16.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

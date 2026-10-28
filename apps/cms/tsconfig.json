@@ -1,0 +1,12 @@
+{
+  "extends": "@pharmaqo/config/tsconfig/nextjs",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@pharmaqo/config": ["../../packages/config/src"],
+      "@pharmaqo/config/*": ["../../packages/config/src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

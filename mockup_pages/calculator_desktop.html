@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Calculator result</title>
+<script src="c3fe212a-dbaf-4c9d-97f5-942581042595"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* vietnamese */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873z3nWuZEC.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873z3jWuZEC.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873z3bWuQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3nWuZEC.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3jWuZEC.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("0c7386bf-2e70-4759-8882-e52cb6b568e8") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("6013b1da-0257-4460-b9e4-fe9a198f98c6") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("9b1b7c8a-0a20-47d7-977d-eaf94b77b32a") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("59bedd5d-8977-4247-bfdd-002012adbd26") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("bc0e5a3b-8544-4537-bee7-69f213695fbf") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("6f7bbe9b-552f-4f80-83ce-8f7ccc396065") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("043e969c-f064-454d-a4fb-c768919c2247") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("c8eb287a-c890-463a-839c-8b833f16090d") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("6013b1da-0257-4460-b9e4-fe9a198f98c6") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("9b1b7c8a-0a20-47d7-977d-eaf94b77b32a") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("59bedd5d-8977-4247-bfdd-002012adbd26") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("bc0e5a3b-8544-4537-bee7-69f213695fbf") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("6f7bbe9b-552f-4f80-83ce-8f7ccc396065") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("043e969c-f064-454d-a4fb-c768919c2247") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("c8eb287a-c890-463a-839c-8b833f16090d") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("6013b1da-0257-4460-b9e4-fe9a198f98c6") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("9b1b7c8a-0a20-47d7-977d-eaf94b77b32a") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("59bedd5d-8977-4247-bfdd-002012adbd26") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("bc0e5a3b-8544-4537-bee7-69f213695fbf") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("6f7bbe9b-552f-4f80-83ce-8f7ccc396065") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("043e969c-f064-454d-a4fb-c768919c2247") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("c8eb287a-c890-463a-839c-8b833f16090d") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#0E1116;background:#F6F5F1}
+a{color:inherit;text-decoration:none}
+a:hover{color:#12A88E}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #19C3A6;outline-offset:2px}
+</style>
+</helmet>
+<div style="width:100%;background:#F6F5F1;display:flex;flex-direction:column">
+
+<div style="background:#0E1116;color:#F6F5F1;font-size:13px;text-align:center;padding:10px 16px">Free UK delivery over £00 · Every batch independently tested</div>
+
+<header style="background:#FFFFFF;border-bottom:1px solid #E3E1DA">
+<div style="max-width:1280px;margin:0 auto;padding:0 32px;height:76px;display:flex;align-items:center;gap:40px">
+<a href="Main.dc.html" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:30px;letter-spacing:.04em;text-transform:uppercase">[Brand]</a>
+<nav aria-label="Main" style="display:flex;gap:28px;font-size:15px;font-weight:500;flex-grow:1;flex-wrap:wrap">
+<a href="Main.dc.html">Protein</a><a href="Main.dc.html">Creatine</a><a href="Main.dc.html">Vitamins</a><a href="Main.dc.html">Pre-Workout</a><a href="Main.dc.html">Recovery</a><a href="Calculator.dc.html" style="text-decoration:underline;text-decoration-color:#19C3A6;text-decoration-thickness:3px;text-underline-offset:8px">Calculators</a><a href="Main.dc.html">Batch results</a>
+</nav>
+<button aria-label="Basket, 0 items" style="width:44px;height:44px;border:0;background:transparent;cursor:pointer"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="#0E1116" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"></path><path d="M9 8a3 3 0 016 0"></path></svg></button>
+</div>
+</header>
+
+<section style="background:#0E1116;color:#F6F5F1">
+<div style="max-width:1280px;margin:0 auto;padding:56px 32px;display:flex;flex-direction:column;gap:12px">
+<span style="font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#19C3A6">Macro and serving calculator</span>
+<h1 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:72px;line-height:.95;text-transform:uppercase">Your daily targets</h1>
+</div>
+</section>
+
+<section>
+<div style="max-width:1280px;margin:0 auto;padding:48px 32px;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+
+<form action="Calculator.dc.html" style="flex:1 1 360px;max-width:440px;background:#FFFFFF;border:1px solid #E3E1DA;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:20px">
+<h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:28px;text-transform:uppercase;letter-spacing:.03em">Your details</h2>
+<div style="display:flex;gap:14px">
+<div style="flex:1 1 0"><label for="c-age" style="display:block;font-size:13px;font-weight:600;margin-bottom:6px">Age</label><input id="c-age" value="[00]" style="width:100%;box-sizing:border-box;height:48px;border:1px solid #CFCDC5;border-radius:6px;padding:0 14px;font-size:16px"></div>
+<div style="flex:1 1 0"><label for="c-sex" style="display:block;font-size:13px;font-weight:600;margin-bottom:6px">Sex</label><sc-raw-select id="c-sex" style="width:100%;box-sizing:border-box;height:48px;border:1px solid #CFCDC5;border-radius:6px;padding:0 10px;font-size:16px;background:#FFFFFF"><option>Female</option><option>Male</option></sc-raw-select></div>
+</div>
+<div style="display:flex;gap:14px">
+<div style="flex:1 1 0"><label for="c-h" style="display:block;font-size:13px;font-weight:600;margin-bottom:6px">Height (cm)</label><input id="c-h" value="[000]" style="width:100%;box-sizing:border-box;height:48px;border:1px solid #CFCDC5;border-radius:6px;padding:0 14px;font-size:16px"></div>
+<div style="flex:1 1 0"><label for="c-w" style="display:block;font-size:13px;font-weight:600;margin-bottom:6px">Weight (kg)</label><input id="c-w" value="[000]" style="width:100%;box-sizing:border-box;height:48px;border:1px solid #CFCDC5;border-radius:6px;padding:0 14px;font-size:16px"></div>
+</div>
+<div><label for="c-act" style="display:block;font-size:13px;font-weight:600;margin-bottom:6px">Activity level</label><sc-raw-select id="c-act" style="width:100%;box-sizing:border-box;height:48px;border:1px solid #CFCDC5;border-radius:6px;padding:0 10px;font-size:16px;background:#FFFFFF"><option>Moderately active (3 to 5 sessions a week)</option><option>Lightly active</option><option>Very active</option></sc-raw-select></div>
+<div><div style="font-size:13px;font-weight:600;margin-bottom:8px">Goal</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<span style="padding:12px 20px;border-radius:999px;background:#0E1116;color:#F6F5F1;font-weight:600;font-size:14px">Build</span>
+<span style="padding:12px 20px;border-radius:999px;border:1px solid #CFCDC5;font-size:14px">Cut</span>
+<span style="padding:12px 20px;border-radius:999px;border:1px solid #CFCDC5;font-size:14px">Maintain</span>
+</div></div>
+<button type="button" style="height:56px;border:0;border-radius:8px;background:#19C3A6;color:#0E1116;font-weight:600;font-size:16px;font-family:inherit;cursor:pointer">Update my plan</button>
+</form>
+
+<div style="flex:2 1 560px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-wrap:wrap;gap:16px">
+<sc-for list="{{macros}}" as="m" hint-placeholder-count="4">
+<div style="flex:1 1 180px;background:#FFFFFF;border:1px solid #E3E1DA;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:6px">
+<span style="font-size:13px;color:#5B6470">{{m.label}}</span>
+<span style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:56px;line-height:1">{{m.value}}</span>
+<div style="height:8px;border-radius:999px;background:#ECEAE4;margin-top:8px"><div style="width:{{m.bar}};height:100%;border-radius:999px;background:#19C3A6"></div></div>
+<span style="font-size:12px;color:#5B6470">{{m.note}}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px">
+<h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:44px;text-transform:uppercase;letter-spacing:.02em">Your plan</h2>
+<span style="font-size:14px;color:#5B6470">Servings are as stated on each label</span>
+</div>
+<sc-for list="{{plan}}" as="p" hint-placeholder-count="3">
+<article style="background:#FFFFFF;border:1px solid #E3E1DA;border-radius:12px;padding:16px;display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+<div style="width:96px;height:96px;border-radius:8px;background:#ECEAE4;display:flex;align-items:center;justify-content:center;flex:none"><svg sc-camel-view-box="0 0 120 150" style="height:72px" aria-hidden="true"><rect x="14" y="22" width="92" height="112" rx="12" fill="{{p.tub}}"></rect><rect x="10" y="8" width="100" height="22" rx="7" fill="#0E1116"></rect><rect x="14" y="60" width="92" height="46" fill="#F6F5F1"></rect><rect x="24" y="72" width="40" height="6" rx="3" fill="#0E1116"></rect><rect x="14" y="106" width="92" height="6" fill="#19C3A6"></rect></svg></div>
+<div style="flex:1 1 240px;display:flex;flex-direction:column;gap:4px">
+<span style="font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#0B6B5B">{{p.why}}</span>
+<a href="Product.dc.html" style="font-weight:600;font-size:18px">{{p.name}}</a>
+<span style="font-size:14px;color:#5B6470">{{p.serving}}</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px;min-width:120px"><span style="font-size:18px;font-weight:600">£00.00</span><span style="font-size:12px;color:#5B6470">about £0.00 a day</span></div>
+<a href="Product.dc.html" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border:1.5px solid #0E1116;font-weight:600;font-size:14px;border-radius:6px">View</a>
+</article>
+</sc-for>
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:#0E1116;color:#F6F5F1;border-radius:12px;padding:20px 24px">
+<div><div style="font-size:13px;color:#C9CDD2">Whole plan</div><div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:36px">£00.00 · about £0.00 a day</div></div>
+<button type="button" style="height:56px;padding:0 32px;border:0;border-radius:8px;background:#19C3A6;color:#0E1116;font-weight:600;font-size:16px;font-family:inherit;cursor:pointer">Add whole plan to basket</button>
+</div>
+<p style="margin:0;font-size:13px;line-height:1.6;color:#5B6470">Estimates use the Mifflin-St Jeor equation and general activity factors. They are a starting point, not medical advice. Speak to a doctor or registered dietitian before changing your diet, particularly if you have a health condition, are pregnant or are under 18.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="background:#0E1116;color:#C9CDD2">
+<div style="max-width:1280px;margin:0 auto;padding:40px 32px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;font-size:12px;line-height:1.6">
+<span>© [YEAR] [Company name], registered in [England and Wales] no. [00000000]. VAT [GB000000000].</span>
+<span style="display:flex;gap:20px"><a href="Main.dc.html">Terms</a><a href="Main.dc.html">Privacy</a><a href="Main.dc.html">Cookies</a><a href="Main.dc.html">Returns</a></span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:2050}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      macros: [
+        { label: 'Calories a day', value: '0,000', bar: '100%', note: 'Maintenance +10% for build' },
+        { label: 'Protein', value: '000 g', bar: '70%', note: '[0.0] g per kg of body weight' },
+        { label: 'Carbohydrate', value: '000 g', bar: '85%', note: '[00]% of calories' },
+        { label: 'Fat', value: '00 g', bar: '45%', note: '[00]% of calories' }
+      ],
+      plan: [
+        { why: 'Closes your protein gap', name: 'Whey Protein Isolate', serving: '[0] servings a day · [000] g per serving · [00] days per tub', tub: '#2B3440' },
+        { why: 'Daily staple', name: 'Creatine Monohydrate', serving: '[0] serving a day · [0] g per serving · [00] days per tub', tub: '#19C3A6' },
+        { why: 'Covers the basics', name: 'Daily Multivitamin', serving: '[0] serving a day · [00] days per pack', tub: '#5B6470' }
+      ]
+    };
+  }
+}
+</script>
+
+
+</body></html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Product page, phone</title>
+<script src="3042b573-29dc-4db4-96e8-136c2a7f8572"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* vietnamese */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873z3nWuZEC.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873z3jWuZEC.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873z3bWuQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3nWuZEC.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3jWuZEC.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("dfbc5f98-a541-4a20-85e7-37d41c593679") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("9e7fd495-182d-4857-98d4-b57e3374dc56") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("9db5955b-bdc8-4a64-96e3-fa537ceb7200") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("38908c5a-c415-4fca-8dff-bf0c3c53164b") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("8dd9a960-76fb-4957-af84-1fd9b7ba6780") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("a6a3763f-8c44-492a-ae42-37b0461efa33") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("706c6261-b6da-4cc0-8783-211a1840de1c") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("dc128b83-692b-4f54-9cc6-3e4812d787a6") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("9e7fd495-182d-4857-98d4-b57e3374dc56") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("9db5955b-bdc8-4a64-96e3-fa537ceb7200") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("38908c5a-c415-4fca-8dff-bf0c3c53164b") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("8dd9a960-76fb-4957-af84-1fd9b7ba6780") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("a6a3763f-8c44-492a-ae42-37b0461efa33") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("706c6261-b6da-4cc0-8783-211a1840de1c") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("dc128b83-692b-4f54-9cc6-3e4812d787a6") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("9e7fd495-182d-4857-98d4-b57e3374dc56") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("9db5955b-bdc8-4a64-96e3-fa537ceb7200") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("38908c5a-c415-4fca-8dff-bf0c3c53164b") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("8dd9a960-76fb-4957-af84-1fd9b7ba6780") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("a6a3763f-8c44-492a-ae42-37b0461efa33") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("706c6261-b6da-4cc0-8783-211a1840de1c") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("dc128b83-692b-4f54-9cc6-3e4812d787a6") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#0E1116;background:#F6F5F1}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #19C3A6;outline-offset:2px}
+</style>
+</helmet>
+<div style="width:390px;background:#F6F5F1;display:flex;flex-direction:column;overflow:hidden">
+
+<header style="background:#FFFFFF;border-bottom:1px solid #E3E1DA;height:64px;padding:0 8px 0 4px;display:flex;align-items:center;gap:4px">
+<a href="HomeMobile.dc.html" aria-label="Back" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="#0E1116" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+<a href="HomeMobile.dc.html" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:26px;letter-spacing:.04em;text-transform:uppercase;flex-grow:1">[Brand]</a>
+<button aria-label="Basket, 0 items" style="width:44px;height:44px;border:0;background:transparent"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="#0E1116" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"></path><path d="M9 8a3 3 0 016 0"></path></svg></button>
+</header>
+
+<div style="position:relative;background:#ECEAE4;height:340px;display:flex;align-items:center;justify-content:center">
+<span style="position:absolute;top:16px;left:16px;background:#0E1116;color:#F6F5F1;font-size:11px;font-weight:600;padding:5px 10px;border-radius:999px">Batch tested</span>
+<svg sc-camel-view-box="0 0 120 150" style="height:260px" aria-hidden="true"><rect x="14" y="22" width="92" height="112" rx="12" fill="#19C3A6"></rect><rect x="10" y="8" width="100" height="22" rx="7" fill="#0E1116"></rect><rect x="14" y="56" width="92" height="52" fill="#F6F5F1"></rect><rect x="24" y="68" width="48" height="7" rx="3" fill="#0E1116"></rect><rect x="24" y="82" width="64" height="4" rx="2" fill="#5B6470"></rect></svg>
+<div style="position:absolute;bottom:14px;display:flex;gap:8px"><span style="width:8px;height:8px;border-radius:999px;background:#0E1116"></span><span style="width:8px;height:8px;border-radius:999px;background:#B9B6AD"></span><span style="width:8px;height:8px;border-radius:999px;background:#B9B6AD"></span><span style="width:8px;height:8px;border-radius:999px;background:#B9B6AD"></span></div>
+</div>
+
+<section style="padding:24px 16px;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#0B6B5B">Creatine</span>
+<h1 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:48px;line-height:.98;text-transform:uppercase">Creatine Monohydrate</h1>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#5B6470"><span style="color:#0E1116;letter-spacing:2px" aria-label="Rating [0.0] out of 5">★★★★★</span><span>[0.0] · [000] reviews</span></div>
+</div>
+<p style="margin:0;font-size:15px;line-height:1.6;color:#3D4650">One ingredient, one scoop. [Short factual description from the label.]</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><span style="background:#E6F8F4;color:#0B6B5B;font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px">Vegan</span><span style="background:#E6F8F4;color:#0B6B5B;font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px">Gluten free</span><span style="background:#E6F8F4;color:#0B6B5B;font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px">Stimulant free</span></div>
+
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font-size:14px;font-weight:600">Size</span>
+<div style="display:flex;gap:10px">
+<span style="flex:1 1 0;height:48px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:1.5px solid #CFCDC5;background:#FFFFFF;font-size:14px;font-weight:600">250 g</span>
+<span style="flex:1 1 0;height:48px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:2px solid #0E1116;background:#E6F8F4;font-size:14px;font-weight:600">500 g</span>
+<span style="flex:1 1 0;height:48px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:1.5px solid #CFCDC5;background:#FFFFFF;font-size:14px;font-weight:600">1 kg</span>
+</div>
+</div>
+
+<div style="background:#FFFFFF;border:1px solid #E3E1DA;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px;font-size:14px">
+<div style="display:flex;gap:10px;align-items:center"><span style="width:20px;height:20px;border-radius:999px;border:2px solid #0E1116;box-sizing:border-box;background:radial-gradient(#0E1116 45%,transparent 50%);flex:none"></span><span style="flex-grow:1">One-time purchase</span><span style="font-weight:600">£00.00</span></div>
+<div style="display:flex;gap:10px;align-items:center"><span style="width:20px;height:20px;border-radius:999px;border:2px solid #5B6470;box-sizing:border-box;flex:none"></span><span style="flex-grow:1">Subscribe and save [00]%</span><span style="font-weight:600">£00.00</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:#3D4650;border-top:1px solid #E3E1DA;padding-top:16px">
+<div>Free UK delivery over £00 · Royal Mail and DPD</div>
+<div>EU delivery available · duties and VAT shown at checkout</div>
+<div>30-day returns on unopened products</div>
+</div>
+</section>
+
+<section style="background:#FFFFFF;border-top:1px solid #E3E1DA;padding:8px 16px">
+<div style="display:flex;justify-content:space-between;align-items:center;min-height:56px;border-bottom:1px solid #E3E1DA;font-weight:600;font-size:16px"><span>Description</span><span aria-hidden="true">+</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;min-height:56px;border-bottom:1px solid #E3E1DA;font-weight:600;font-size:16px"><span>How to use</span><span aria-hidden="true">+</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;min-height:56px;font-weight:600;font-size:16px"><span>Nutrition information</span><span aria-hidden="true">−</span></div>
+<div style="border:1.5px solid #0E1116;border-radius:12px;overflow:hidden;margin:4px 0 16px">
+<div style="display:flex;justify-content:space-between;padding:12px 16px;font-size:12px;color:#5B6470;border-bottom:1px solid #E3E1DA"><span>Serving [0] g</span><span>Per serving · Per 100 g</span></div>
+<sc-for list="{{nutrition}}" as="n" hint-placeholder-count="5">
+<div style="display:flex;justify-content:space-between;padding:12px 16px;font-size:14px;border-bottom:1px solid #E3E1DA"><span>{{n}}</span><span style="font-weight:600">[00] · [00]</span></div>
+</sc-for>
+<div style="padding:12px 16px;font-size:12px;color:#5B6470">Ingredients: [list]. Allergens: [list].</div>
+</div>
+</section>
+
+<section style="padding:24px 16px;display:flex;flex-direction:column;gap:12px">
+<span style="font-weight:600;font-size:16px">Check this batch</span>
+<div style="display:flex;gap:10px">
+<label for="pm-b" style="position:absolute;left:-9999px">Batch code</label>
+<input id="pm-b" placeholder="Code on the tub" style="flex:1 1 0;min-width:0;height:48px;box-sizing:border-box;border:1px solid #0E1116;border-radius:6px;padding:0 14px;font-size:16px;background:#FFFFFF">
+<button type="button" style="height:48px;padding:0 20px;border:0;border-radius:6px;background:#0E1116;color:#F6F5F1;font-weight:600;font-size:15px;font-family:inherit">Check</button>
+</div>
+</section>
+
+<section style="padding:16px 16px 32px;display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:34px;text-transform:uppercase">Often bought together</h2>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+<sc-for list="{{related}}" as="p" hint-placeholder-count="2">
+<article style="background:#FFFFFF;border:1px solid #E3E1DA;border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:10px">
+<div style="background:#ECEAE4;border-radius:8px;height:130px;display:flex;align-items:center;justify-content:center"><svg sc-camel-view-box="0 0 120 150" style="height:90px" aria-hidden="true"><rect x="14" y="22" width="92" height="112" rx="12" fill="{{p.tub}}"></rect><rect x="10" y="8" width="100" height="22" rx="7" fill="#0E1116"></rect><rect x="14" y="60" width="92" height="46" fill="#F6F5F1"></rect></svg></div>
+<span style="font-weight:600;font-size:15px">{{p.name}}</span>
+<span style="font-size:17px;font-weight:600">£00.00</span>
+</article>
+</sc-for>
+</div>
+</section>
+
+<div style="position:sticky;bottom:0;background:#FFFFFF;border-top:1px solid #E3E1DA;padding:12px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 -8px 24px rgba(14,17,22,.08)">
+<div style="display:flex;flex-direction:column"><span style="font-size:12px;color:#5B6470">500 g</span><span style="font-size:18px;font-weight:600">£00.00</span></div>
+<button type="button" style="flex:1 1 0;height:52px;border:0;border-radius:8px;background:#19C3A6;color:#0E1116;font-weight:600;font-size:16px;font-family:inherit">Add to basket</button>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:2750}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      nutrition: ['Energy (kJ / kcal)', 'Protein (g)', 'Carbohydrate (g)', 'Fat (g)', 'Creatine monohydrate (g)'],
+      related: [
+        { name: 'Whey Protein Isolate', tub: '#2B3440' },
+        { name: 'Daily Multivitamin', tub: '#5B6470' }
+      ]
+    };
+  }
+}
+</script>
+
+
+</body></html>

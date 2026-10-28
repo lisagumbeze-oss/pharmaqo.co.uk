@@ -1,0 +1,14 @@
+{
+  "extends": "@pharmaqo/config/tsconfig/node",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "noEmit": true,
+    "paths": {
+      "@pharmaqo/config": ["../../packages/config/src"],
+      "@pharmaqo/config/*": ["../../packages/config/src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "medusa-config.ts"],
+  "exclude": ["node_modules", "dist", ".medusa"]
+}

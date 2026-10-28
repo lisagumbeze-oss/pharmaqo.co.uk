@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "medusa develop",
+    "start": "medusa start",
+    "build": "medusa build",
+    "seed": "medusa exec ./src/scripts/seed.ts",
+    "db:migrate": "medusa migrations run",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@pharmaqo/config": "workspace:*",
+    "@medusajs/framework": "^2.21.0",
+    "@medusajs/medusa": "^2.21.0",
+    "@medusajs/cli": "^2.21.0",
+    "@medusajs/fulfillment-manual": "^2.21.0",
+    "@medusajs/payment-stripe": "^2.21.0",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.4.0"
+  }
+}

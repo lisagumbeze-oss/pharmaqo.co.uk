@@ -1,0 +1,257 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/*
+ * ──────────────────────────────────────────────────────
+ *  Design Tokens — Tailwind CSS v4 @theme
+ *  Source of truth: packages/config/src/brand.config.ts
+ *  Mirror: packages/ui/src/tokens/index.ts
+ * ──────────────────────────────────────────────────────
+ */
+
+@theme {
+  /* ── Brand palette ─────────────────────────────── */
+  --color-ink: #0E1116;
+  --color-paper: #F6F5F1;
+  --color-surface: #FFFFFF;
+  --color-accent: #19C3A6;
+  --color-accent-hover: #12A88E;
+  --color-accent-light: rgba(25, 195, 166, 0.1);
+  --color-muted: #5B6470;
+  --color-border: #E3E1DA;
+  --color-border-dark: #2A2D33;
+  --color-success: #1F9D55;
+  --color-warning: #D98A00;
+  --color-error: #D64545;
+  --color-surface-dark: #1A1D23;
+  --color-ink-inverse: #F6F5F1;
+  --color-ink-muted: #5B6470;
+  --color-ink-light: #9CA3AF;
+
+  /* ── Typography ────────────────────────────────── */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Barlow Condensed', ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Type scale (px → rem) ─────────────────────── */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.375rem;    /* 22px */
+  --text-2xl: 1.75rem;    /* 28px */
+  --text-3xl: 2.25rem;    /* 36px */
+  --text-4xl: 3rem;       /* 48px */
+  --text-5xl: 4rem;       /* 64px */
+
+  /* ── Spacing scale ─────────────────────────────── */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-24: 96px;
+
+  /* ── Radii ─────────────────────────────────────── */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-full: 999px;
+
+  /* ── Shadows ───────────────────────────────────── */
+  --shadow-sm: 0 1px 2px rgba(14, 17, 22, 0.06);
+  --shadow-md: 0 8px 24px rgba(14, 17, 22, 0.08);
+
+  /* ── Container ─────────────────────────────────── */
+  --container-max: 1280px;
+
+  /* ── Animation ─────────────────────────────────── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-hover: 150ms;
+  --duration-drawer: 250ms;
+}
+
+/*
+ * ──────────────────────────────────────────────────────
+ *  Base layer
+ * ──────────────────────────────────────────────────────
+ */
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  /* Accessibility: accent never used for small text on white */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+/*
+ * ──────────────────────────────────────────────────────
+ *  Component utilities
+ * ──────────────────────────────────────────────────────
+ */
+
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--duration-hover) ease-out;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  .btn-primary:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    background-color: transparent;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1.5px solid var(--color-ink);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--duration-hover) ease-out;
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+    transform: translateY(-1px);
+  }
+
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all var(--duration-drawer) var(--ease-out-expo);
+  }
+  .card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.625rem;
+    font-family: var(--font-display);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: var(--color-accent-light);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+  }
+
+  .container-main {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .section-heading {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--color-ink);
+  }
+
+  @media (min-width: 768px) {
+    .section-heading {
+      font-size: 3rem;
+    }
+  }
+}
+
+/*
+ * ──────────────────────────────────────────────────────
+ *  Animations
+ * ──────────────────────────────────────────────────────
+ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s var(--ease-out-expo) forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-paper) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
