@@ -1,5 +1,5 @@
 {
-  "extends": "@pharmaqo/config/tsconfig/nextjs",
+  "extends": "../../packages/config/tsconfig.nextjs.json",
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],

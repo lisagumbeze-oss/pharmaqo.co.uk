@@ -4,10 +4,6 @@
     "storefront": {
       "root": "apps/storefront/",
       "framework": "nextjs"
-    },
-    "cms": {
-      "root": "apps/cms/",
-      "framework": "nextjs"
     }
   },
   "rewrites": [
