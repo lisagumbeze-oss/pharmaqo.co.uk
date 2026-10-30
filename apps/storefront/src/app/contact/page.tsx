@@ -11,13 +11,17 @@ export default function ContactPage() {
     <div className="w-full bg-[#F6F5F1] py-12 sm:py-16 min-h-screen">
       <div className="max-w-[800px] mx-auto px-6 sm:px-8 flex flex-col gap-8">
         <nav className="flex items-center gap-2 text-xs text-[#5B6470]">
-          <Link href="/" className="hover:text-accent">Home</Link>
+          <Link href="/" className="hover:text-accent">
+            Home
+          </Link>
           <span>/</span>
           <span className="text-[#0E1116] font-medium">Contact</span>
         </nav>
 
         <div>
-          <span className="text-xs font-bold uppercase tracking-widest text-accent">UK Support</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-accent">
+            UK Support
+          </span>
           <h1 className="font-display font-bold text-4xl sm:text-6xl uppercase tracking-[0.02em] text-[#0E1116] mt-1">
             Contact Support
           </h1>
@@ -26,8 +30,12 @@ export default function ContactPage() {
         <div className="bg-white border border-[#E3E1DA] rounded-2xl p-7 sm:p-10 shadow-sm">
           {submitted ? (
             <div className="text-center py-12 flex flex-col items-center gap-4">
-              <span className="w-12 h-12 rounded-full bg-[#E6F8F4] text-[#0B6B5B] flex items-center justify-center text-2xl font-bold">✓</span>
-              <h2 className="font-display font-bold text-2xl uppercase text-[#0E1116]">Message Received</h2>
+              <span className="w-12 h-12 rounded-full bg-[#E6F8F4] text-[#0B6B5B] flex items-center justify-center text-2xl font-bold">
+                ✓
+              </span>
+              <h2 className="font-display font-bold text-2xl uppercase text-[#0E1116]">
+                Message Received
+              </h2>
               <p className="text-xs text-[#5B6470] max-w-sm">
                 Our support team will respond to your enquiry within 24 business hours.
               </p>
@@ -42,7 +50,10 @@ export default function ContactPage() {
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                  <label
+                    htmlFor="name"
+                    className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                  >
                     Your Name
                   </label>
                   <input
@@ -53,7 +64,10 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                  <label
+                    htmlFor="email"
+                    className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                  >
                     Email Address
                   </label>
                   <input
@@ -66,7 +80,10 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                <label
+                  htmlFor="subject"
+                  className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                >
                   Subject / Batch Number
                 </label>
                 <input
@@ -78,7 +95,10 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                <label
+                  htmlFor="message"
+                  className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                >
                   Message
                 </label>
                 <textarea
@@ -102,8 +122,8 @@ export default function ContactPage() {
           <div className="border-t border-[#E3E1DA] pt-6 mt-6 flex flex-wrap gap-6 text-xs text-[#5B6470]">
             <div>
               <span className="font-bold text-ink block">Email</span>
-              <a href={`mailto:${brand.supportEmail}`} className="text-accent underline">
-                {brand.supportEmail}
+              <a href={`mailto:${brand.support.email}`} className="text-accent underline">
+                {brand.support.email}
               </a>
             </div>
             <div>

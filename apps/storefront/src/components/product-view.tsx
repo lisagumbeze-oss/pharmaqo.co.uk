@@ -25,9 +25,10 @@ export default function ProductView({ product, related }: ProductViewProps) {
     { label: '500 g', multiplier: 0.6, servings: '16 servings' },
     { label: '1 kg', multiplier: 1.0, servings: '33 servings' },
     { label: '2.5 kg', multiplier: 2.2, servings: '83 servings' },
-  ]
+  ] as const
 
-  const basePricePence = Math.round(product.price * sizes[selectedSizeIndex].multiplier)
+  const selectedSize = sizes[selectedSizeIndex] ?? sizes[1]
+  const basePricePence = Math.round(product.price * selectedSize.multiplier)
   const subscribePricePence = Math.round(basePricePence * 0.85) // 15% discount
   const finalPricePence = purchaseMode === 'subscribe' ? subscribePricePence : basePricePence
 
@@ -44,7 +45,7 @@ export default function ProductView({ product, related }: ProductViewProps) {
     addItem({
       id: product.id,
       name: product.name,
-      variant: `${sizes[selectedSizeIndex].label} · ${purchaseMode === 'subscribe' ? 'Subscribe & Save' : 'One-time'}`,
+      variant: `${selectedSize.label} · ${purchaseMode === 'subscribe' ? 'Subscribe & Save' : 'One-time'}`,
       price: finalPricePence,
       quantity,
       tubColor: currentTubColor,
@@ -55,9 +56,14 @@ export default function ProductView({ product, related }: ProductViewProps) {
     <div className="w-full bg-[#F6F5F1] flex flex-col">
       {/* ── Breadcrumb ─────────────────────────────────── */}
       <div className="max-w-[1280px] w-full mx-auto px-6 sm:px-8 pt-6 pb-2 text-xs text-[#5B6470]">
-        <Link href="/" className="hover:text-accent transition-colors">Home</Link>
+        <Link href="/" className="hover:text-accent transition-colors">
+          Home
+        </Link>
         {' / '}
-        <Link href={`/category/${product.categorySlug}`} className="hover:text-accent transition-colors">
+        <Link
+          href={`/category/${product.categorySlug}`}
+          className="hover:text-accent transition-colors"
+        >
           {product.category}
         </Link>
         {' / '}
@@ -81,7 +87,9 @@ export default function ProductView({ product, related }: ProductViewProps) {
               <div
                 key={idx}
                 className={`flex-1 h-20 sm:h-24 rounded-xl bg-[#ECEAE4] border flex items-center justify-center cursor-pointer transition-all ${
-                  idx === 0 ? 'border-2 border-accent shadow-sm' : 'border-[#E3E1DA] hover:border-accent/50'
+                  idx === 0
+                    ? 'border-2 border-accent shadow-sm'
+                    : 'border-[#E3E1DA] hover:border-accent/50'
                 }`}
               >
                 <TubGraphic tubColor={currentTubColor} size="sm" className="h-14 sm:h-16" />
@@ -100,7 +108,10 @@ export default function ProductView({ product, related }: ProductViewProps) {
               {product.name}
             </h1>
             <div className="flex items-center gap-2.5 text-xs text-[#5B6470] mt-1">
-              <span className="text-[#0E1116] tracking-widest text-sm" aria-label="5 out of 5 stars">
+              <span
+                className="text-[#0E1116] tracking-widest text-sm"
+                aria-label="5 out of 5 stars"
+              >
                 ★★★★★
               </span>
               <span>4.9 · 142 reviews</span>
@@ -120,7 +131,9 @@ export default function ProductView({ product, related }: ProductViewProps) {
               Gluten free
             </span>
             <span className="bg-[#E6F8F4] text-[#0B6B5B] text-xs font-bold px-3 py-1.5 rounded-full">
-              {product.tags.stimulant === 'stimulant-free' ? 'Stimulant free' : 'Contains Caffeine (21+)'}
+              {product.tags.stimulant === 'stimulant-free'
+                ? 'Stimulant free'
+                : 'Contains Caffeine (21+)'}
             </span>
           </div>
 
@@ -247,10 +260,10 @@ export default function ProductView({ product, related }: ProductViewProps) {
                   {tab === 'desc'
                     ? 'Description'
                     : tab === 'nutrition'
-                    ? 'Nutrition'
-                    : tab === 'usage'
-                    ? 'How to use'
-                    : 'Reviews (142)'}
+                      ? 'Nutrition'
+                      : tab === 'usage'
+                        ? 'How to use'
+                        : 'Reviews (142)'}
                 </button>
               ))}
             </div>
@@ -259,13 +272,16 @@ export default function ProductView({ product, related }: ProductViewProps) {
             {activeTab === 'desc' && (
               <div className="flex flex-col gap-4 text-sm sm:text-base leading-relaxed text-[#3D4650]">
                 <p>
-                  {product.description} Cross-flow microfiltered to preserve native protein fractions and maintain biological availability without denaturation.
+                  {product.description} Cross-flow microfiltered to preserve native protein
+                  fractions and maintain biological availability without denaturation.
                 </p>
                 <p>
-                  <strong className="text-[#0E1116]">Suggested use:</strong> Take 1 serving daily, as stated on the label. Do not exceed the stated serving.
+                  <strong className="text-[#0E1116]">Suggested use:</strong> Take 1 serving daily,
+                  as stated on the label. Do not exceed the stated serving.
                 </p>
                 <p className="text-xs text-[#5B6470] italic">
-                  Food supplements should not replace a varied, balanced diet and a healthy lifestyle. Keep out of reach of children.
+                  Food supplements should not replace a varied, balanced diet and a healthy
+                  lifestyle. Keep out of reach of children.
                 </p>
               </div>
             )}
@@ -274,9 +290,18 @@ export default function ProductView({ product, related }: ProductViewProps) {
               <NutritionTable
                 servingSize={product.servingSize}
                 nutrients={[
-                  { name: 'Energy', perServing: '470 kJ / 112 kcal', per100g: '1567 kJ / 373 kcal' },
+                  {
+                    name: 'Energy',
+                    perServing: '470 kJ / 112 kcal',
+                    per100g: '1567 kJ / 373 kcal',
+                  },
                   { name: 'Fat', perServing: '0.4 g', per100g: '1.3 g' },
-                  { name: 'of which saturates', perServing: '0.2 g', per100g: '0.7 g', indent: true },
+                  {
+                    name: 'of which saturates',
+                    perServing: '0.2 g',
+                    per100g: '0.7 g',
+                    indent: true,
+                  },
                   { name: 'Carbohydrate', perServing: '0.6 g', per100g: '2.0 g' },
                   { name: 'of which sugars', perServing: '0.4 g', per100g: '1.3 g', indent: true },
                   { name: 'Protein (dry basis)', perServing: '27.0 g', per100g: '90.0 g' },
@@ -284,17 +309,22 @@ export default function ProductView({ product, related }: ProductViewProps) {
                 ]}
                 ingredients={product.ingredients.join(', ')}
                 allergens={product.categorySlug === 'protein' ? ['Milk'] : []}
-                warnings={['Do not exceed the recommended daily dose.', 'Keep out of reach of young children.']}
+                warnings={[
+                  'Do not exceed the recommended daily dose.',
+                  'Keep out of reach of young children.',
+                ]}
               />
             )}
 
             {activeTab === 'usage' && (
               <div className="text-sm leading-relaxed text-[#3D4650] space-y-3">
                 <p>
-                  Mix 1 scoop ({product.servingSize}) with 200–250 ml of cold water or your favourite beverage in a shaker.
+                  Mix 1 scoop ({product.servingSize}) with 200–250 ml of cold water or your
+                  favourite beverage in a shaker.
                 </p>
                 <p>
-                  Consume immediately after workout, or first thing in the morning on non-training days.
+                  Consume immediately after workout, or first thing in the morning on non-training
+                  days.
                 </p>
               </div>
             )}
@@ -304,11 +334,14 @@ export default function ProductView({ product, related }: ProductViewProps) {
                 <div className="border border-[#E3E1DA] rounded-xl p-4 bg-paper/40">
                   <div className="flex justify-between items-center mb-1">
                     <span className="font-bold text-ink">James M.</span>
-                    <span className="text-xs text-[#5B6470]">Verified UK Purchase · 12 Oct 2026</span>
+                    <span className="text-xs text-[#5B6470]">
+                      Verified UK Purchase · 12 Oct 2026
+                    </span>
                   </div>
                   <div className="text-amber-500 text-xs mb-2">★★★★★</div>
                   <p className="text-xs leading-relaxed">
-                    Mixes instantly with zero clumping. Love that the batch certificate is publicly viewable on the site.
+                    Mixes instantly with zero clumping. Love that the batch certificate is publicly
+                    viewable on the site.
                   </p>
                 </div>
               </div>

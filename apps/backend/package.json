@@ -12,19 +12,20 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@pharmaqo/config": "workspace:*",
-    "@medusajs/framework": "^2.21.0",
-    "@medusajs/medusa": "^2.21.0",
     "@medusajs/cli": "^2.21.0",
+    "@medusajs/framework": "^2.21.0",
     "@medusajs/fulfillment-manual": "^2.21.0",
+    "@medusajs/medusa": "^2.21.0",
     "@medusajs/payment-stripe": "^2.21.0",
+    "@pharmaqo/config": "workspace:*",
     "pg": "^8.13.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
-    "typescript": "^5.7.0",
+    "cheerio": "^1.2.0",
     "eslint": "^9.16.0",
     "eslint-config-prettier": "^9.1.0",
-    "prettier": "^3.4.0"
+    "prettier": "^3.4.0",
+    "typescript": "^5.7.0"
   }
 }

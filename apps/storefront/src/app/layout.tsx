@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import { brand } from '@/lib/brand'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
+import BackToTop from '@/components/back-to-top'
 import { CartProvider } from '@/context/cart-context'
 import CartDrawerShell from '@/components/cart-drawer-shell'
 import './globals.css'
@@ -20,14 +23,16 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-GB">
       <body className="flex min-h-screen flex-col bg-paper text-ink selection:bg-accent selection:text-ink">
         <CartProvider>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pb-20 md:pb-0">{children}</main>
           <Footer />
+          <MobileBottomNav />
+          <BackToTop />
           <CartDrawerShell />
         </CartProvider>
       </body>

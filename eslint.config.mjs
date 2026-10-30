@@ -19,6 +19,9 @@ export default [
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
+      // TypeScript already checks undefined identifiers; no-undef false-positives
+      // on browser/Node globals (process, fetch, URL, alert, React namespace).
+      'no-undef': 'off',
       '@typescript-eslint/no-unused-vars': [
         'warn',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },

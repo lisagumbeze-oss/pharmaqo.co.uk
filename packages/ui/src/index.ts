@@ -16,7 +16,7 @@ export {
   type InputProps,
   type SelectProps,
   type QuantitySelectorProps,
-} from './components/index.tsx'
+} from './components/index'
 
 // Form controls
 export {
@@ -28,17 +28,10 @@ export {
 } from './components/form-controls'
 
 // Price block
-export {
-  PriceBlock,
-  type PriceBlockProps,
-} from './components/price-block'
+export { PriceBlock, type PriceBlockProps } from './components/price-block'
 
 // Trust bar
-export {
-  TrustBar,
-  type TrustItem,
-  type TrustBarProps,
-} from './components/trust-bar'
+export { TrustBar, type TrustItem, type TrustBarProps } from './components/trust-bar'
 
 // Accordion & Tabs
 export {
@@ -55,7 +48,7 @@ export {
   Modal,
   CartDrawer,
   type ModalProps,
-  type CartDrawerItem,
+  type CartItem as CartDrawerItem,
   type CartDrawerProps,
 } from './components/modal-drawer'
 
@@ -100,7 +93,4 @@ export {
 } from './components/shop'
 
 // Tub Graphic
-export {
-  TubGraphic,
-  type TubGraphicProps,
-} from './components/tub-graphic'
+export { TubGraphic, type TubGraphicProps } from './components/tub-graphic'

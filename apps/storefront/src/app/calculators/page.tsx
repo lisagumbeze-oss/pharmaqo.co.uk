@@ -5,12 +5,26 @@ import Link from 'next/link'
 import { useCart } from '@/context/cart-context'
 import { TubGraphic } from '@pharmaqo/ui'
 import {
-  calculateDailyTargets,
-  calculateServing,
+  calculateMacros,
+  calculateServings,
   type Sex,
   type ActivityLevel,
   type Goal,
+  type ServingResult,
 } from '@pharmaqo/calculators'
+
+function fixedDailyServing(
+  servingsPerTub: number,
+  pricePence: number,
+  servingsPerDay = 1,
+): ServingResult {
+  return {
+    servingsPerDay,
+    costPerDayPence: Math.round((pricePence / servingsPerTub) * servingsPerDay),
+    daysPerTub: Math.floor(servingsPerTub / servingsPerDay),
+    dailyProteinG: 0,
+  }
+}
 
 export default function CalculatorsPage() {
   const { addItem } = useCart()
@@ -23,42 +37,28 @@ export default function CalculatorsPage() {
   const [goal, setGoal] = useState<Goal>('build')
 
   // Calculate live using verified @pharmaqo/calculators package
-  const targets = calculateDailyTargets({
+  const targets = calculateMacros({
     age,
     sex,
     heightCm,
     weightKg,
-    activityLevel: activity,
+    activity,
     goal,
   })
 
   // Protein serving recommendation based on user weight
-  const proteinServing = calculateServing({
-    bodyWeightKg: weightKg,
+  const proteinServing = calculateServings({
+    weightKg,
     goal,
-    servingSizeG: 30,
-    proteinPerServingG: 27,
+    proteinPerServing: 27,
+    maxServingsPerDay: 3,
     servingsPerTub: 30,
     pricePence: 3499,
   })
 
-  const creatineServing = calculateServing({
-    bodyWeightKg: weightKg,
-    goal,
-    servingSizeG: 5,
-    proteinPerServingG: 0,
-    servingsPerTub: 100,
-    pricePence: 1499,
-  })
-
-  const vitaminServing = calculateServing({
-    bodyWeightKg: weightKg,
-    goal,
-    servingSizeG: 2,
-    proteinPerServingG: 0,
-    servingsPerTub: 60,
-    pricePence: 1899,
-  })
+  // Non-protein products use label daily servings (calculator requires protein > 0)
+  const creatineServing = fixedDailyServing(100, 1499)
+  const vitaminServing = fixedDailyServing(60, 1899)
 
   const planProducts = [
     {
@@ -95,7 +95,9 @@ export default function CalculatorsPage() {
 
   const totalPlanPricePence = planProducts.reduce((sum, p) => sum + p.pricePence, 0)
   const totalCostPerDayPence =
-    proteinServing.costPerDayPence + creatineServing.costPerDayPence + vitaminServing.costPerDayPence
+    proteinServing.costPerDayPence +
+    creatineServing.costPerDayPence +
+    vitaminServing.costPerDayPence
 
   const handleAddWholePlan = () => {
     planProducts.forEach((p) => {
@@ -205,8 +207,8 @@ export default function CalculatorsPage() {
               <option value="sedentary">Sedentary (office work, little exercise)</option>
               <option value="light">Lightly active (1 to 2 sessions a week)</option>
               <option value="moderate">Moderately active (3 to 5 sessions a week)</option>
-              <option value="very_active">Very active (6 to 7 sessions a week)</option>
-              <option value="extra_active">Extra active (physical job or twice daily)</option>
+              <option value="active">Very active (6 to 7 sessions a week)</option>
+              <option value="very-active">Extra active (physical job or twice daily)</option>
             </select>
           </div>
 
@@ -245,33 +247,37 @@ export default function CalculatorsPage() {
             <div className="bg-white border border-[#E3E1DA] rounded-xl p-5 flex flex-col gap-1.5 shadow-sm">
               <span className="text-xs text-[#5B6470]">Calories a day</span>
               <span className="font-display font-bold text-4xl sm:text-5xl text-[#0E1116] leading-none">
-                {targets.dailyCalories.toLocaleString()}
+                {targets.calories.toLocaleString()}
               </span>
               <div className="h-2 rounded-full bg-[#ECEAE4] mt-2">
                 <div className="w-full h-full rounded-full bg-accent" />
               </div>
               <span className="text-[11px] text-[#5B6470] mt-1">
-                {goal === 'build' ? 'TDEE +10% surplus' : goal === 'cut' ? 'TDEE -15% deficit' : 'Maintenance'}
+                {goal === 'build'
+                  ? 'TDEE +10% surplus'
+                  : goal === 'cut'
+                    ? 'TDEE -15% deficit'
+                    : 'Maintenance'}
               </span>
             </div>
 
             <div className="bg-white border border-[#E3E1DA] rounded-xl p-5 flex flex-col gap-1.5 shadow-sm">
               <span className="text-xs text-[#5B6470]">Protein</span>
               <span className="font-display font-bold text-4xl sm:text-5xl text-[#0E1116] leading-none">
-                {targets.proteinGrams} g
+                {targets.proteinG} g
               </span>
               <div className="h-2 rounded-full bg-[#ECEAE4] mt-2">
                 <div className="w-[75%] h-full rounded-full bg-accent" />
               </div>
               <span className="text-[11px] text-[#5B6470] mt-1">
-                {(targets.proteinGrams / weightKg).toFixed(1)} g per kg bodyweight
+                {(targets.proteinG / weightKg).toFixed(1)} g per kg bodyweight
               </span>
             </div>
 
             <div className="bg-white border border-[#E3E1DA] rounded-xl p-5 flex flex-col gap-1.5 shadow-sm">
               <span className="text-xs text-[#5B6470]">Carbohydrate</span>
               <span className="font-display font-bold text-4xl sm:text-5xl text-[#0E1116] leading-none">
-                {targets.carbGrams} g
+                {targets.carbG} g
               </span>
               <div className="h-2 rounded-full bg-[#ECEAE4] mt-2">
                 <div className="w-[85%] h-full rounded-full bg-accent" />
@@ -282,7 +288,7 @@ export default function CalculatorsPage() {
             <div className="bg-white border border-[#E3E1DA] rounded-xl p-5 flex flex-col gap-1.5 shadow-sm">
               <span className="text-xs text-[#5B6470]">Fat</span>
               <span className="font-display font-bold text-4xl sm:text-5xl text-[#0E1116] leading-none">
-                {targets.fatGrams} g
+                {targets.fatG} g
               </span>
               <div className="h-2 rounded-full bg-[#ECEAE4] mt-2">
                 <div className="w-[45%] h-full rounded-full bg-accent" />
@@ -351,7 +357,8 @@ export default function CalculatorsPage() {
               <div>
                 <div className="text-xs text-[#C9CDD2]">Whole plan</div>
                 <div className="font-display font-bold text-2xl sm:text-4xl text-white">
-                  £{(totalPlanPricePence / 100).toFixed(2)} · about £{(totalCostPerDayPence / 100).toFixed(2)} a day
+                  £{(totalPlanPricePence / 100).toFixed(2)} · about £
+                  {(totalCostPerDayPence / 100).toFixed(2)} a day
                 </div>
               </div>
               <button
@@ -365,7 +372,10 @@ export default function CalculatorsPage() {
 
             {/* Mandatory Medical Disclaimer */}
             <p className="text-xs leading-relaxed text-[#5B6470] mt-2">
-              Estimates use the Mifflin-St Jeor equation and general activity factors. They are a starting point, not medical advice. Speak to a doctor or registered dietitian before changing your diet, particularly if you have a health condition, are pregnant or are under 18.
+              Estimates use the Mifflin-St Jeor equation and general activity factors. They are a
+              starting point, not medical advice. Speak to a doctor or registered dietitian before
+              changing your diet, particularly if you have a health condition, are pregnant or are
+              under 18.
             </p>
           </div>
         </div>

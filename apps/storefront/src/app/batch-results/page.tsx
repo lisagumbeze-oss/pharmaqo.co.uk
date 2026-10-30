@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import Link from 'next/link'
 import { brand } from '@/lib/brand'
 
 interface BatchReport {
@@ -70,12 +69,12 @@ const verifiedReports: BatchReport[] = [
 
 export default function BatchResultsPage() {
   const [search, setSearch] = useState('')
-  const [activeReport, setActiveReport] = useState<BatchReport | null>(verifiedReports[0])
+  const [activeReport, setActiveReport] = useState<BatchReport | null>(verifiedReports[0] ?? null)
 
   const filtered = verifiedReports.filter(
     (r) =>
       r.batchCode.toLowerCase().includes(search.toLowerCase()) ||
-      r.productName.toLowerCase().includes(search.toLowerCase())
+      r.productName.toLowerCase().includes(search.toLowerCase()),
   )
 
   return (
@@ -90,7 +89,8 @@ export default function BatchResultsPage() {
             Independent Batch Reports
           </h1>
           <p className="text-base text-[#C9CDD2] max-w-xl">
-            Every single batch produced by {brand.name} is independently tested by accredited third-party UK laboratories for label accuracy, heavy metals, and banned substances.
+            Every single batch produced by {brand.name} is independently tested by accredited
+            third-party UK laboratories for label accuracy, heavy metals, and banned substances.
           </p>
         </div>
       </section>
@@ -102,7 +102,8 @@ export default function BatchResultsPage() {
             Enter Tub Batch Code
           </h2>
           <p className="text-sm text-[#5B6470]">
-            Locate the 6-character code printed near the expiry date on the bottom or side of your tub (e.g. PQ-2401).
+            Locate the 6-character code printed near the expiry date on the bottom or side of your
+            tub (e.g. PQ-2401).
           </p>
           <div className="flex gap-3 max-w-md">
             <input
@@ -115,7 +116,9 @@ export default function BatchResultsPage() {
             <button
               type="button"
               onClick={() => {
-                const match = verifiedReports.find((r) => r.batchCode.toLowerCase() === search.toLowerCase().trim())
+                const match = verifiedReports.find(
+                  (r) => r.batchCode.toLowerCase() === search.toLowerCase().trim(),
+                )
                 if (match) setActiveReport(match)
               }}
               className="h-12 px-6 bg-[#0E1116] text-[#F6F5F1] font-display font-bold text-xs uppercase tracking-wider rounded-md hover:bg-black transition-colors"
@@ -153,7 +156,9 @@ export default function BatchResultsPage() {
                 </div>
                 <div className="flex justify-between border-b border-[#E3E1DA] pb-2">
                   <span className="text-[#5B6470]">Manufacture Date</span>
-                  <span className="font-semibold text-[#0E1116]">{activeReport.manufactureDate}</span>
+                  <span className="font-semibold text-[#0E1116]">
+                    {activeReport.manufactureDate}
+                  </span>
                 </div>
                 <div className="flex justify-between border-b border-[#E3E1DA] pb-2">
                   <span className="text-[#5B6470]">Test Release Date</span>
@@ -180,10 +185,21 @@ export default function BatchResultsPage() {
             <div className="flex justify-end pt-2">
               <button
                 type="button"
-                onClick={() => alert(`Downloading Certificate of Analysis PDF for batch ${activeReport.batchCode}`)}
+                onClick={() =>
+                  alert(
+                    `Downloading Certificate of Analysis PDF for batch ${activeReport.batchCode}`,
+                  )
+                }
                 className="inline-flex items-center gap-2 h-12 px-6 bg-accent text-[#0E1116] font-display font-bold text-xs uppercase tracking-wider rounded-md hover:bg-accent-hover transition-colors"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
                 </svg>
                 Download Official Certificate (PDF)
@@ -203,11 +219,21 @@ export default function BatchResultsPage() {
             <table className="w-full text-left text-sm" aria-label="Recent batch test certificates">
               <thead className="bg-paper border-b border-[#E3E1DA] text-xs font-semibold text-[#5B6470] uppercase">
                 <tr>
-                  <th scope="col" className="px-6 py-3">Batch Code</th>
-                  <th scope="col" className="px-6 py-3">Product Name</th>
-                  <th scope="col" className="px-6 py-3">Test Date</th>
-                  <th scope="col" className="px-6 py-3">Status</th>
-                  <th scope="col" className="px-6 py-3 text-right">Action</th>
+                  <th scope="col" className="px-6 py-3">
+                    Batch Code
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Product Name
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Test Date
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Status
+                  </th>
+                  <th scope="col" className="px-6 py-3 text-right">
+                    Action
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#E3E1DA]">
@@ -245,15 +271,24 @@ export default function BatchResultsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-[#C9CDD2]">
             <div>
               <p className="font-bold text-white mb-1">1. Quarantine & Sampling</p>
-              <p>Every raw material batch is held in quarantine until random statistical samples are sent to UKAS-accredited testing facilities.</p>
+              <p>
+                Every raw material batch is held in quarantine until random statistical samples are
+                sent to UKAS-accredited testing facilities.
+              </p>
             </div>
             <div>
               <p className="font-bold text-white mb-1">2. HPLC & ICP-MS Testing</p>
-              <p>High Performance Liquid Chromatography verifies active potency. Inductively Coupled Plasma Mass Spectrometry checks for lead, mercury, cadmium, and arsenic.</p>
+              <p>
+                High Performance Liquid Chromatography verifies active potency. Inductively Coupled
+                Plasma Mass Spectrometry checks for lead, mercury, cadmium, and arsenic.
+              </p>
             </div>
             <div>
               <p className="font-bold text-white mb-1">3. Public Release</p>
-              <p>Tubs only enter fulfillment once the independent Certificate of Analysis is signed and uploaded to this database for complete customer transparency.</p>
+              <p>
+                Tubs only enter fulfillment once the independent Certificate of Analysis is signed
+                and uploaded to this database for complete customer transparency.
+              </p>
             </div>
           </div>
         </div>

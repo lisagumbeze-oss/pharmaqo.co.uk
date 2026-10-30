@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { brand } from '@/lib/brand'
 import { useCart } from '@/context/cart-context'
 import { TubGraphic } from '@pharmaqo/ui'
 
@@ -28,7 +27,8 @@ export default function CheckoutPage() {
           Thank you for your order!
         </h1>
         <p className="text-base text-[#5B6470] max-w-md">
-          Order reference: <strong className="text-ink font-mono">PQ-ORD-74921</strong>. We have sent a confirmation email to your address with Royal Mail tracking information.
+          Order reference: <strong className="text-ink font-mono">PQ-ORD-74921</strong>. We have
+          sent a confirmation email to your address with Royal Mail tracking information.
         </p>
         <Link
           href="/"
@@ -45,9 +45,13 @@ export default function CheckoutPage() {
       <div className="max-w-[1280px] mx-auto px-6 sm:px-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-[#5B6470] mb-6">
-          <Link href="/" className="hover:text-accent transition-colors">Home</Link>
+          <Link href="/" className="hover:text-accent transition-colors">
+            Home
+          </Link>
           <span>/</span>
-          <Link href="/cart" className="hover:text-accent transition-colors">Basket</Link>
+          <Link href="/cart" className="hover:text-accent transition-colors">
+            Basket
+          </Link>
           <span>/</span>
           <span className="text-[#0E1116] font-medium">Checkout</span>
         </nav>
@@ -72,7 +76,10 @@ export default function CheckoutPage() {
               </h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="sm:col-span-2">
-                  <label htmlFor="c-email" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                  <label
+                    htmlFor="c-email"
+                    className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                  >
                     Email address for tracking updates
                   </label>
                   <input
@@ -84,7 +91,10 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="c-fname" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                  <label
+                    htmlFor="c-fname"
+                    className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                  >
                     First Name
                   </label>
                   <input
@@ -95,7 +105,10 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="c-lname" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                  <label
+                    htmlFor="c-lname"
+                    className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                  >
                     Last Name
                   </label>
                   <input
@@ -115,7 +128,10 @@ export default function CheckoutPage() {
               </h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="sm:col-span-2">
-                  <label htmlFor="c-addr" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                  <label
+                    htmlFor="c-addr"
+                    className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                  >
                     Address Line 1
                   </label>
                   <input
@@ -127,7 +143,10 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="c-city" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                  <label
+                    htmlFor="c-city"
+                    className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                  >
                     Town / City
                   </label>
                   <input
@@ -138,7 +157,10 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="c-postcode" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                  <label
+                    htmlFor="c-postcode"
+                    className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                  >
                     Postcode
                   </label>
                   <input
@@ -150,7 +172,10 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div className="sm:col-span-2">
-                  <label htmlFor="c-country" className="block text-xs font-semibold text-[#0E1116] mb-1.5">
+                  <label
+                    htmlFor="c-country"
+                    className="block text-xs font-semibold text-[#0E1116] mb-1.5"
+                  >
                     Country
                   </label>
                   <select
@@ -176,7 +201,9 @@ export default function CheckoutPage() {
               <div className="space-y-3">
                 <label
                   className={`flex items-center justify-between p-4 rounded-lg border cursor-pointer transition-colors ${
-                    deliveryMethod === 'standard' ? 'border-[#0E1116] bg-paper/60' : 'border-[#CFCDC5]'
+                    deliveryMethod === 'standard'
+                      ? 'border-[#0E1116] bg-paper/60'
+                      : 'border-[#CFCDC5]'
                   }`}
                   onClick={() => setDeliveryMethod('standard')}
                 >
@@ -202,7 +229,9 @@ export default function CheckoutPage() {
 
                 <label
                   className={`flex items-center justify-between p-4 rounded-lg border cursor-pointer transition-colors ${
-                    deliveryMethod === 'express' ? 'border-[#0E1116] bg-paper/60' : 'border-[#CFCDC5]'
+                    deliveryMethod === 'express'
+                      ? 'border-[#0E1116] bg-paper/60'
+                      : 'border-[#CFCDC5]'
                   }`}
                   onClick={() => setDeliveryMethod('express')}
                 >
@@ -236,7 +265,10 @@ export default function CheckoutPage() {
               </p>
               <div className="border border-[#CFCDC5] rounded-md p-4 bg-paper/30 space-y-3">
                 <div>
-                  <label htmlFor="c-card" className="block text-xs font-semibold text-[#0E1116] mb-1">
+                  <label
+                    htmlFor="c-card"
+                    className="block text-xs font-semibold text-[#0E1116] mb-1"
+                  >
                     Card Number
                   </label>
                   <input
@@ -249,7 +281,10 @@ export default function CheckoutPage() {
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label htmlFor="c-exp" className="block text-xs font-semibold text-[#0E1116] mb-1">
+                    <label
+                      htmlFor="c-exp"
+                      className="block text-xs font-semibold text-[#0E1116] mb-1"
+                    >
                       Expiry
                     </label>
                     <input
@@ -261,7 +296,10 @@ export default function CheckoutPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="c-cvc" className="block text-xs font-semibold text-[#0E1116] mb-1">
+                    <label
+                      htmlFor="c-cvc"
+                      className="block text-xs font-semibold text-[#0E1116] mb-1"
+                    >
                       CVC
                     </label>
                     <input
@@ -299,7 +337,9 @@ export default function CheckoutPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-bold text-ink truncate">{it.name}</p>
-                    <p className="text-[11px] text-[#5B6470]">Qty: {it.quantity} · {it.variant}</p>
+                    <p className="text-[11px] text-[#5B6470]">
+                      Qty: {it.quantity} · {it.variant}
+                    </p>
                   </div>
                   <span className="text-xs font-bold text-ink">
                     £{((it.price * it.quantity) / 100).toFixed(2)}
@@ -314,7 +354,9 @@ export default function CheckoutPage() {
                 <span className="font-bold text-ink">£{(subtotal / 100).toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
-                <span>Delivery ({deliveryMethod === 'standard' ? 'Royal Mail 48' : 'DPD Next Day'})</span>
+                <span>
+                  Delivery ({deliveryMethod === 'standard' ? 'Royal Mail 48' : 'DPD Next Day'})
+                </span>
                 <span className="font-bold text-ink">
                   {deliveryCostPence === 0 ? 'Free' : `£${(deliveryCostPence / 100).toFixed(2)}`}
                 </span>
@@ -326,14 +368,17 @@ export default function CheckoutPage() {
             </div>
 
             <div className="border-t border-[#0E1116] pt-4 flex justify-between items-baseline">
-              <span className="font-display font-bold text-base uppercase text-[#0E1116]">Total</span>
+              <span className="font-display font-bold text-base uppercase text-[#0E1116]">
+                Total
+              </span>
               <span className="font-display font-bold text-2xl text-[#0E1116]">
                 £{(totalPence / 100).toFixed(2)}
               </span>
             </div>
 
             <div className="text-[11px] leading-relaxed text-[#5B6470] border-t border-[#E3E1DA] pt-3">
-              Complies with UK Food Supplements Regulations. 30-day money back guarantee on unopened products.
+              Complies with UK Food Supplements Regulations. 30-day money back guarantee on unopened
+              products.
             </div>
           </div>
         </div>

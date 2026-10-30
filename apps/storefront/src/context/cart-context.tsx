@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 
 export interface CartItem {
   id: string
@@ -62,9 +62,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       const qty = item.quantity || 1
       if (existing) {
         return prev.map((i) =>
-          i.id === item.id && i.variant === item.variant
-            ? { ...i, quantity: i.quantity + qty }
-            : i
+          i.id === item.id && i.variant === item.variant ? { ...i, quantity: i.quantity + qty } : i,
         )
       }
       return [...prev, { ...item, quantity: qty }]

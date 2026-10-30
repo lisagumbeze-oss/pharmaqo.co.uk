@@ -64,32 +64,60 @@ export default function Header() {
               onClick={() => alert('Search: Type product or batch number')}
               className="w-11 h-11 flex items-center justify-center text-[#0E1116] hover:bg-paper rounded-full transition-colors"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                aria-hidden="true"
+              >
                 <circle cx="11" cy="11" r="7" />
                 <path d="M20 20l-4-4" />
               </svg>
             </button>
 
-            {/* Account */}
+            {/* Account — desktop only (mobile uses bottom nav) */}
             <Link
               href="/account"
               aria-label="Account"
-              className="w-11 h-11 flex items-center justify-center text-[#0E1116] hover:bg-paper rounded-full transition-colors"
+              className="hidden md:flex w-11 h-11 items-center justify-center text-[#0E1116] hover:bg-paper rounded-full transition-colors"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                aria-hidden="true"
+              >
                 <circle cx="12" cy="8" r="4" />
                 <path d="M4 21c1-4 4-6 8-6s7 2 8 6" />
               </svg>
             </Link>
 
-            {/* Basket Button */}
+            {/* Basket — desktop only (mobile uses bottom nav) */}
             <button
               type="button"
               onClick={openCart}
               aria-label={`Basket, ${itemCount} items`}
-              className="relative w-11 h-11 flex items-center justify-center text-[#0E1116] hover:bg-paper rounded-full transition-colors"
+              className="relative hidden md:flex w-11 h-11 items-center justify-center text-[#0E1116] hover:bg-paper rounded-full transition-colors"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M5 8h14l-1 12H6L5 8z" />
                 <path d="M9 8a3 3 0 016 0" />
               </svg>
@@ -107,7 +135,14 @@ export default function Header() {
               className="md:hidden w-11 h-11 flex items-center justify-center text-[#0E1116] hover:bg-paper rounded-full transition-colors ml-1"
               aria-label="Toggle navigation menu"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 {mobileOpen ? (
                   <path d="M6 6l12 12M18 6L6 18" />
                 ) : (
@@ -121,13 +156,27 @@ export default function Header() {
         {/* Mobile dropdown */}
         {mobileOpen && (
           <nav className="md:hidden border-t border-[#E3E1DA] bg-white px-6 py-4 flex flex-col gap-3 font-display uppercase tracking-wider font-semibold text-sm">
-            <Link href="/category/protein" onClick={() => setMobileOpen(false)}>Protein</Link>
-            <Link href="/category/creatine" onClick={() => setMobileOpen(false)}>Creatine</Link>
-            <Link href="/category/vitamins" onClick={() => setMobileOpen(false)}>Vitamins</Link>
-            <Link href="/category/pre-workout" onClick={() => setMobileOpen(false)}>Pre-Workout</Link>
-            <Link href="/category/recovery" onClick={() => setMobileOpen(false)}>Recovery</Link>
-            <Link href="/calculators" onClick={() => setMobileOpen(false)}>Calculators</Link>
-            <Link href="/batch-results" onClick={() => setMobileOpen(false)}>Batch results</Link>
+            <Link href="/category/protein" onClick={() => setMobileOpen(false)}>
+              Protein
+            </Link>
+            <Link href="/category/creatine" onClick={() => setMobileOpen(false)}>
+              Creatine
+            </Link>
+            <Link href="/category/vitamins" onClick={() => setMobileOpen(false)}>
+              Vitamins
+            </Link>
+            <Link href="/category/pre-workout" onClick={() => setMobileOpen(false)}>
+              Pre-Workout
+            </Link>
+            <Link href="/category/recovery" onClick={() => setMobileOpen(false)}>
+              Recovery
+            </Link>
+            <Link href="/calculators" onClick={() => setMobileOpen(false)}>
+              Calculators
+            </Link>
+            <Link href="/batch-results" onClick={() => setMobileOpen(false)}>
+              Batch results
+            </Link>
           </nav>
         )}
       </header>

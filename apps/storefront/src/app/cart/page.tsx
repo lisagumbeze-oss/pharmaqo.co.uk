@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { brand } from '@/lib/brand'
 import { useCart } from '@/context/cart-context'
 import { TubGraphic } from '@pharmaqo/ui'
 
@@ -19,7 +18,9 @@ export default function CartPage() {
       <div className="max-w-[1280px] mx-auto px-6 sm:px-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-[#5B6470] mb-6">
-          <Link href="/" className="hover:text-accent transition-colors">Home</Link>
+          <Link href="/" className="hover:text-accent transition-colors">
+            Home
+          </Link>
           <span>/</span>
           <span className="text-[#0E1116] font-medium">Basket</span>
         </nav>
@@ -68,10 +69,17 @@ export default function CartPage() {
               {/* Items List */}
               <div className="divide-y divide-[#E3E1DA]">
                 {items.map((it) => (
-                  <div key={`${it.id}-${it.variant}`} className="py-5 flex flex-wrap gap-4 items-center justify-between">
+                  <div
+                    key={`${it.id}-${it.variant}`}
+                    className="py-5 flex flex-wrap gap-4 items-center justify-between"
+                  >
                     <div className="flex items-center gap-4">
                       <div className="w-16 h-16 rounded-lg bg-paper flex items-center justify-center shrink-0">
-                        <TubGraphic tubColor={it.tubColor || '#2B3440'} size="sm" className="h-11" />
+                        <TubGraphic
+                          tubColor={it.tubColor || '#2B3440'}
+                          size="sm"
+                          className="h-11"
+                        />
                       </div>
                       <div>
                         <Link
@@ -94,7 +102,9 @@ export default function CartPage() {
                         >
                           −
                         </button>
-                        <span className="w-7 text-center text-xs font-bold text-ink">{it.quantity}</span>
+                        <span className="w-7 text-center text-xs font-bold text-ink">
+                          {it.quantity}
+                        </span>
                         <button
                           type="button"
                           onClick={() => updateQuantity(it.id, it.quantity + 1)}
@@ -149,13 +159,15 @@ export default function CartPage() {
                 <div className="flex justify-between">
                   <span>VAT (included)</span>
                   <span className="font-bold text-ink">
-                    £{((subtotal * 0.2 / 1.2) / 100).toFixed(2)}
+                    £{((subtotal * 0.2) / 1.2 / 100).toFixed(2)}
                   </span>
                 </div>
               </div>
 
               <div className="flex justify-between items-baseline pt-1">
-                <span className="font-display font-bold text-base uppercase text-[#0E1116]">Total</span>
+                <span className="font-display font-bold text-base uppercase text-[#0E1116]">
+                  Total
+                </span>
                 <span className="font-display font-bold text-2xl text-[#0E1116]">
                   £{(totalPence / 100).toFixed(2)}
                 </span>

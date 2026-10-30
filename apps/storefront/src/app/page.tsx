@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { brand } from '@/lib/brand'
-import { products, categories } from '@/lib/data'
+import { categories } from '@/lib/data'
 import { useCart } from '@/context/cart-context'
 import { TubGraphic } from '@pharmaqo/ui'
 
@@ -20,7 +19,9 @@ export default function HomePage() {
   const tdee = Math.round(bmr * 1.55) // moderate activity factor
   const goalMultiplier = calcGoal === 'build' ? 1.1 : calcGoal === 'cut' ? 0.85 : 1.0
   const calories = Math.round(tdee * goalMultiplier)
-  const proteinGrams = Math.round(calcWeight * (calcGoal === 'build' ? 2.0 : calcGoal === 'cut' ? 2.2 : 1.8))
+  const proteinGrams = Math.round(
+    calcWeight * (calcGoal === 'build' ? 2.0 : calcGoal === 'cut' ? 2.2 : 1.8),
+  )
   const fatGrams = Math.round((calories * 0.25) / 9)
   const carbGrams = Math.round((calories - (proteinGrams * 4 + fatGrams * 9)) / 4)
 
@@ -108,10 +109,13 @@ export default function HomePage() {
               Sports nutrition · Made in the UK
             </span>
             <h1 className="font-display font-bold text-6xl sm:text-8xl lg:text-[100px] leading-[0.92] tracking-[0.01em] uppercase text-white">
-              Know exactly<br />what you take.
+              Know exactly
+              <br />
+              what you take.
             </h1>
             <p className="text-base sm:text-lg leading-relaxed text-[#C9CDD2] max-w-[520px]">
-              Protein, creatine, vitamins and recovery formulas. Every batch tested, every result public, every serving worked out for your goal.
+              Protein, creatine, vitamins and recovery formulas. Every batch tested, every result
+              public, every serving worked out for your goal.
             </p>
             <div className="flex flex-wrap gap-3.5 pt-2">
               <Link
@@ -133,7 +137,11 @@ export default function HomePage() {
           <div className="flex-1 min-w-[300px] flex justify-center">
             <div className="w-full max-w-[520px] aspect-square rounded-3xl bg-[#1A2029] flex items-end justify-center gap-3 sm:gap-4 p-8 sm:p-10 border border-[#2B3440]">
               <TubGraphic tubColor="#2B3440" size="lg" className="w-[30%] h-auto mb-2" />
-              <TubGraphic tubColor="#19C3A6" size="xl" className="w-[40%] h-auto -mb-1 drop-shadow-xl" />
+              <TubGraphic
+                tubColor="#19C3A6"
+                size="xl"
+                className="w-[40%] h-auto -mb-1 drop-shadow-xl"
+              />
               <TubGraphic tubColor="#3A4452" size="lg" className="w-[30%] h-auto mb-2" />
             </div>
           </div>
@@ -145,7 +153,17 @@ export default function HomePage() {
         <div className="max-w-[1280px] mx-auto px-6 sm:px-8 py-7 flex flex-wrap gap-6 sm:gap-12 justify-between">
           <div className="flex items-center gap-3.5 min-w-[220px] flex-1">
             <span className="w-11 h-11 rounded-full bg-[#E6F8F4] flex items-center justify-center shrink-0">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E1116" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#0E1116"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M5 12l4 4 10-10" />
               </svg>
             </span>
@@ -157,7 +175,17 @@ export default function HomePage() {
 
           <div className="flex items-center gap-3.5 min-w-[220px] flex-1">
             <span className="w-11 h-11 rounded-full bg-[#E6F8F4] flex items-center justify-center shrink-0">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E1116" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#0E1116"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M5 12l4 4 10-10" />
               </svg>
             </span>
@@ -169,7 +197,17 @@ export default function HomePage() {
 
           <div className="flex items-center gap-3.5 min-w-[220px] flex-1">
             <span className="w-11 h-11 rounded-full bg-[#E6F8F4] flex items-center justify-center shrink-0">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E1116" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#0E1116"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M5 12l4 4 10-10" />
               </svg>
             </span>
@@ -181,7 +219,17 @@ export default function HomePage() {
 
           <div className="flex items-center gap-3.5 min-w-[220px] flex-1">
             <span className="w-11 h-11 rounded-full bg-[#E6F8F4] flex items-center justify-center shrink-0">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E1116" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#0E1116"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M5 12l4 4 10-10" />
               </svg>
             </span>
@@ -199,7 +247,10 @@ export default function HomePage() {
           <h2 className="font-display font-bold text-4xl sm:text-5xl uppercase tracking-[0.02em] text-[#0E1116]">
             Shop by category
           </h2>
-          <Link href="/shop" className="font-semibold text-sm text-[#0E1116] underline hover:text-accent transition-colors">
+          <Link
+            href="/shop"
+            className="font-semibold text-sm text-[#0E1116] underline hover:text-accent transition-colors"
+          >
             View all products
           </Link>
         </div>
@@ -254,7 +305,10 @@ export default function HomePage() {
                 />
               </Link>
               <div className="flex flex-col gap-1">
-                <Link href={`/product/${p.id}`} className="font-semibold text-base text-[#0E1116] hover:text-accent transition-colors">
+                <Link
+                  href={`/product/${p.id}`}
+                  className="font-semibold text-base text-[#0E1116] hover:text-accent transition-colors"
+                >
                   {p.name}
                 </Link>
                 <span className="text-xs text-[#5B6470]">{p.note}</span>
@@ -295,10 +349,13 @@ export default function HomePage() {
               Your plan in two minutes
             </span>
             <h2 className="font-display font-bold text-4xl sm:text-6xl leading-[0.98] uppercase text-white">
-              Calculate your targets.<br />Get matched products.
+              Calculate your targets.
+              <br />
+              Get matched products.
             </h2>
             <p className="text-base leading-relaxed text-[#C9CDD2] max-w-[480px]">
-              Enter your details to see daily calories and macros, then the servings per day shown on each label. Your plan adds straight to the basket.
+              Enter your details to see daily calories and macros, then the servings per day shown
+              on each label. Your plan adds straight to the basket.
             </p>
             <div className="pt-2">
               <Link
@@ -395,10 +452,13 @@ export default function HomePage() {
             Check your batch
           </h2>
           <p className="text-base leading-relaxed text-[#5B6470] max-w-[480px]">
-            Every tub carries a batch code. Enter it to see the independent lab report for that exact batch.
+            Every tub carries a batch code. Enter it to see the independent lab report for that
+            exact batch.
           </p>
           <form onSubmit={handleBatchSubmit} className="flex gap-3 flex-wrap">
-            <label htmlFor="batch" className="sr-only">Batch code</label>
+            <label htmlFor="batch" className="sr-only">
+              Batch code
+            </label>
             <input
               id="batch"
               type="text"
@@ -418,7 +478,9 @@ export default function HomePage() {
 
         <div className="flex-1 min-w-[320px] bg-white border border-[#E3E1DA] rounded-2xl p-7 flex flex-col gap-4 shadow-sm">
           <div className="flex justify-between items-center flex-wrap gap-2">
-            <span className="font-semibold text-base text-[#0E1116]">{activeBatch.product} · Batch {activeBatch.code}</span>
+            <span className="font-semibold text-base text-[#0E1116]">
+              {activeBatch.product} · Batch {activeBatch.code}
+            </span>
             <span className="bg-[#E6F8F4] text-[#0B6B5B] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
               {activeBatch.status}
             </span>
@@ -434,7 +496,9 @@ export default function HomePage() {
             </div>
             <div className="flex justify-between pt-2">
               <span className="text-[#5B6470]">Tested for</span>
-              <span className="font-medium text-[#0E1116] text-right max-w-[240px]">{activeBatch.testedFor}</span>
+              <span className="font-medium text-[#0E1116] text-right max-w-[240px]">
+                {activeBatch.testedFor}
+              </span>
             </div>
           </div>
           <Link
@@ -464,7 +528,9 @@ export default function HomePage() {
             }}
             className="flex gap-3 flex-1 min-w-[320px] max-w-[480px] flex-wrap"
           >
-            <label htmlFor="nl" className="sr-only">Email address</label>
+            <label htmlFor="nl" className="sr-only">
+              Email address
+            </label>
             <input
               id="nl"
               type="email"

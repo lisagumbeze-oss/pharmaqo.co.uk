@@ -1,15 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import {
-  colors,
-  fonts,
-  spacing,
-  typeScale,
-  radii,
-  shadows,
-  breakpoints,
-  motion,
-} from '@pharmaqo/ui'
+import { colors, typeScale } from '@pharmaqo/ui'
 
 export const metadata = {
   title: 'Design System Styleguide — Tokens & Spec',
@@ -21,13 +12,17 @@ export default function StyleguidePage() {
     <div className="w-full bg-paper py-12 sm:py-16">
       <div className="max-w-[1280px] mx-auto px-6 sm:px-8 flex flex-col gap-12">
         <nav className="flex items-center gap-2 text-xs text-[#5B6470]">
-          <Link href="/" className="hover:text-accent">Home</Link>
+          <Link href="/" className="hover:text-accent">
+            Home
+          </Link>
           <span>/</span>
           <span className="text-[#0E1116] font-medium">Styleguide</span>
         </nav>
 
         <div>
-          <span className="text-xs font-bold uppercase tracking-widest text-accent">Phase 1 Design System</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-accent">
+            Phase 1 Design System
+          </span>
           <h1 className="font-display font-bold text-4xl sm:text-6xl uppercase tracking-[0.02em] text-[#0E1116] mt-1">
             Design Tokens & Spec
           </h1>
@@ -84,26 +79,40 @@ export default function StyleguidePage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-8 border-b border-border pb-6">
             <div>
-              <span className="text-xs font-bold text-muted uppercase tracking-wider block mb-1">Display Font</span>
+              <span className="text-xs font-bold text-muted uppercase tracking-wider block mb-1">
+                Display Font
+              </span>
               <p className="font-display font-bold text-3xl uppercase tracking-[0.02em] text-ink">
                 Barlow Condensed 600 / 700
               </p>
-              <span className="text-xs text-muted">Used for headings, product titles, badges, and CTAs.</span>
+              <span className="text-xs text-muted">
+                Used for headings, product titles, badges, and CTAs.
+              </span>
             </div>
             <div>
-              <span className="text-xs font-bold text-muted uppercase tracking-wider block mb-1">Body Font</span>
-              <p className="font-body text-xl text-ink font-medium">
-                Inter 400 / 500 / 600
-              </p>
-              <span className="text-xs text-muted">Used for body copy, data tables, and input labels.</span>
+              <span className="text-xs font-bold text-muted uppercase tracking-wider block mb-1">
+                Body Font
+              </span>
+              <p className="font-body text-xl text-ink font-medium">Inter 400 / 500 / 600</p>
+              <span className="text-xs text-muted">
+                Used for body copy, data tables, and input labels.
+              </span>
             </div>
           </div>
 
           <div className="space-y-4">
             {Object.entries(typeScale).map(([scale, px]) => (
-              <div key={scale} className="flex items-baseline justify-between border-b border-border/50 pb-2">
-                <span className="font-mono text-xs text-muted">{scale} ({px})</span>
-                <span className="font-display font-bold uppercase text-ink" style={{ fontSize: px }}>
+              <div
+                key={scale}
+                className="flex items-baseline justify-between border-b border-border/50 pb-2"
+              >
+                <span className="font-mono text-xs text-muted">
+                  {scale} ({px})
+                </span>
+                <span
+                  className="font-display font-bold uppercase text-ink"
+                  style={{ fontSize: px }}
+                >
                   Pharmaqo Performance Nutrition
                 </span>
               </div>
@@ -142,7 +151,9 @@ export default function StyleguidePage() {
 
             {/* Shadows */}
             <div className="flex flex-col gap-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted">Elevation Shadows</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-muted">
+                Elevation Shadows
+              </span>
               <div className="p-4 bg-white rounded-lg shadow-sm border border-border text-xs font-semibold">
                 shadow-sm: 0 1px 2px rgba(14,17,22,.06)
               </div>
@@ -153,12 +164,15 @@ export default function StyleguidePage() {
 
             {/* Motion */}
             <div className="flex flex-col gap-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted">Transitions & Motion</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-muted">
+                Transitions & Motion
+              </span>
               <div className="p-3 bg-paper rounded-lg text-xs">
                 <span className="font-bold text-ink block">Hover:</span> 150 ms ease-out
               </div>
               <div className="p-3 bg-paper rounded-lg text-xs">
-                <span className="font-bold text-ink block">Drawers & Dialogs:</span> 250 ms cubic-bezier
+                <span className="font-bold text-ink block">Drawers & Dialogs:</span> 250 ms
+                cubic-bezier
               </div>
             </div>
           </div>
